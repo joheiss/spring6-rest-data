@@ -1,0 +1,73 @@
+@url = http://localhost:8080/api/v1
+
+# GET list of beers
+GET {{url}}/beers
+Content-Type: application/json
+
+###
+
+# GET single beer by id
+GET {{url}}/beers/a05bd12a-f010-4141-b93d-0bb5204f2688
+Content-Type: application/json
+
+###
+
+# GET profile of beers
+GET {{url}}/profile/beers
+Content-Type: application/json
+
+###
+
+# POST a beer
+POST {{url}}/beers
+Content-Type: application/json
+
+{
+  "beerName": "Paulaner Hell",
+  "beerStyle": "PALE_ALE",
+  "upc": "4711471147110", 
+  "quantityOnHand": 77,
+  "price": 7.89
+}
+
+###
+
+# GET single beer by id
+GET {{url}}/beers/b3b672aa-28dc-4d50-bc61-13aeff7595cb
+Content-Type: application/json
+
+###
+
+# PUT an existing beer
+PUT {{url}}/beers/b3b672aa-28dc-4d50-bc61-13aeff7595cb
+Content-Type: application/json
+
+{
+"beerName": "Paulaner Hell",
+  "beerStyle": "PALE_ALE",
+  "upc": "4711471147110", 
+  "quantityOnHand": 55,
+  "price": 7.89
+}
+
+###
+
+# DELETE an existing beer
+DELETE {{url}}/beers/b696145f-1201-4497-90c8-2e8dcde10eca
+
+###
+
+# find by name
+GET {{url}}/beers/search/findAllByBeerName?beerName=Galaxy Cat
+
+###
+
+# find beer by UPC
+GET {{url}}/beers/search/findByUpc?upc=0631234200036
+
+###
+
+# find by style
+GET {{url}}/beers/search/findAllByBeerStyle?beerStyle=PALE_ALE
+
+###
